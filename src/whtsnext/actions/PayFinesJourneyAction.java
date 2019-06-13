@@ -6,8 +6,7 @@ import whtsnext.user.UserBean;
 import java.util.List;
 import java.util.Map;
 
-import static whtsnext.ValidActions.INVALID;
-import static whtsnext.ValidActions.NOT_DONE;
+import static whtsnext.ValidActions.*;
 
 public class PayFinesJourneyAction extends JourneyActions {
     public PayFinesJourneyAction(Journey driveACar) {
@@ -18,7 +17,7 @@ public class PayFinesJourneyAction extends JourneyActions {
     public ValidActions valid(UserBean userBean) {
         final List<Map<String, String>> fines = userBean.getUserAttributes().getFines();
 
-        return null == fines ? INVALID : NOT_DONE;
+        return null == fines ? DONE : NOT_DONE;
     }
 
     @Override
